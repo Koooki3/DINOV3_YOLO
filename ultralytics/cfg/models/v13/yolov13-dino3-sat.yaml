@@ -1,6 +1,6 @@
-# YOLOv13 with DINOv3 Satellite Imagery Backbone
+﻿# YOLOv13 with DINOv3 Satellite Imagery Backbone
 # Usage: YOLO('yolov13-dino3-sat.yaml') - Optimized for satellite/aerial imagery
-# Parameters: ~99M | GFLOPs: ~18.1 | Uses DINOv3 trained on satellite imagery
+# Parameters: ~99M | GFLOPs: requires local re-profile | Uses DINOv3 trained on satellite imagery
 
 nc: 80 # number of classes
 scales:

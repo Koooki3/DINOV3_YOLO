@@ -1,8 +1,8 @@
-# DINOv3 Multi-Scale Architecture Guide
+﻿# DINOv3 Multi-Scale Architecture Guide
 
 This guide provides comprehensive information about the new multi-scale DINOv3 enhancement architectures for YOLOv13.
 
-## 🎯 Architecture Overview
+## 馃幆 Architecture Overview
 
 The implementation now offers **4 different enhancement strategies** allowing users to choose where and how to apply DINOv3 enhancements:
 
@@ -18,48 +18,50 @@ The implementation now offers **4 different enhancement strategies** allowing us
 ### 4. **Triple-Scale Enhancement** (NEW)
 - **yolov13-dino3-multi**: DINOv3 enhancement at P3, P4, and P5 levels with optimized variants
 
-## 📊 Architecture Specifications
+## 馃搳 Architecture Specifications
 
 ### Performance Comparison
 
 | Architecture | Enhancement Strategy | Layers | Parameters | GFLOPs | Memory | Training Time |
 |--------------|---------------------|--------|------------|--------|--------|---------------|
-| **yolov13-dino3** | P4 Enhanced | 480 | 99.4M | 18.1 | ~3GB | 1x (baseline) |
-| **yolov13-dino3-dual** | P3+P4 Enhanced | 723 | 187.8M | 35.9 | ~6GB | ~2x |
-| **yolov13-dino3-p3** | P3 Enhanced | 480 | 94.5M | 17.8 | ~3GB | 1x |
-| **yolov13-dino3-multi** | P3+P4+P5 Enhanced | 1,182 | 450.9M | 87.1 | ~15GB | ~5x |
+| **yolov13-dino3** | P4 Enhanced | 480 | 99.4M | profile locally | ~3GB | 1x (baseline) |
+| **yolov13-dino3-dual** | P3+P4 Enhanced | 723 | 187.8M | profile locally | ~6GB | ~2x |
+| **yolov13-dino3-p3** | P3 Enhanced | 480 | 94.5M | profile locally | ~3GB | 1x |
+
+| **yolov13-dino3-multi** | P3+P4+P5 Enhanced | 1,182 | 450.9M | profile locally | ~15GB | ~5x |
+GFLOPs note: these reference architectures are not the active runtime path in this repository. Re-profile with the current local ultralytics implementation before using any compute figure in reports or comparisons.
 
 ### Enhancement Distribution
 
 #### yolov13-dino3 (Single P4)
 ```
 P3: Standard CNN features
-P4: ✅ DINOv3-Base enhanced features
+P4: 鉁?DINOv3-Base enhanced features
 P5: Standard CNN features
 ```
 
 #### yolov13-dino3-dual (P3+P4)
 ```
-P3: ✅ DINOv3-Base enhanced features
-P4: ✅ DINOv3-Base enhanced features  
+P3: 鉁?DINOv3-Base enhanced features
+P4: 鉁?DINOv3-Base enhanced features  
 P5: Standard CNN features
 ```
 
 #### yolov13-dino3-p3 (P3 Only)
 ```
-P3: ✅ DINOv3-Base enhanced features
+P3: 鉁?DINOv3-Base enhanced features
 P4: Standard CNN features
 P5: Standard CNN features
 ```
 
 #### yolov13-dino3-multi (All Scales)
 ```
-P3: ✅ DINOv3-Small enhanced features (optimized for small objects)
-P4: ✅ DINOv3-Base enhanced features (optimized for medium objects)
-P5: ✅ DINOv3-Large enhanced features (optimized for large objects)
+P3: 鉁?DINOv3-Small enhanced features (optimized for small objects)
+P4: 鉁?DINOv3-Base enhanced features (optimized for medium objects)
+P5: 鉁?DINOv3-Large enhanced features (optimized for large objects)
 ```
 
-## 🚀 Usage Examples
+## 馃殌 Usage Examples
 
 ### Basic Training Commands
 
@@ -119,67 +121,67 @@ python train_dino2.py \
     --freeze-dino2
 ```
 
-## 🎯 Architecture Selection Guidelines
+## 馃幆 Architecture Selection Guidelines
 
 ### Choose **yolov13-dino3** when:
-- ✅ General purpose object detection
-- ✅ First time using DINOv3 
-- ✅ Limited computational resources
-- ✅ Need fast training and inference
+- 鉁?General purpose object detection
+- 鉁?First time using DINOv3 
+- 鉁?Limited computational resources
+- 鉁?Need fast training and inference
 - **Best for**: Balanced performance with reasonable computational cost
 
 ### Choose **yolov13-dino3-dual** when:
-- ✅ Need improved small and medium object detection
-- ✅ Have moderate computational resources
-- ✅ Want better performance than single-scale
-- ✅ Dataset has mixed object sizes
+- 鉁?Need improved small and medium object detection
+- 鉁?Have moderate computational resources
+- 鉁?Want better performance than single-scale
+- 鉁?Dataset has mixed object sizes
 - **Best for**: Balanced enhancement across multiple scales
 
 ### Choose **yolov13-dino3-p3** when:
-- ✅ Dataset has predominantly small objects
-- ✅ Small object detection is critical
-- ✅ Want to minimize computational overhead
-- ✅ Other scales perform well without enhancement
+- 鉁?Dataset has predominantly small objects
+- 鉁?Small object detection is critical
+- 鉁?Want to minimize computational overhead
+- 鉁?Other scales perform well without enhancement
 - **Best for**: Small object detection optimization
 
 ### Choose **yolov13-dino3-multi** when:
-- ✅ Maximum accuracy is required
-- ✅ Have high-end GPU with >16GB VRAM
-- ✅ Training time is not a constraint
-- ✅ Research or production where performance matters most
+- 鉁?Maximum accuracy is required
+- 鉁?Have high-end GPU with >16GB VRAM
+- 鉁?Training time is not a constraint
+- 鉁?Research or production where performance matters most
 - **Best for**: State-of-the-art performance across all object sizes
 
-## 🔧 Technical Implementation Details
+## 馃敡 Technical Implementation Details
 
 ### Architecture Flow
 
 #### Single Enhancement (yolov13-dino3)
 ```
-Input → CNN Backbone → P4 DINO3 Enhancement → Multi-Scale Head → Detection
+Input 鈫?CNN Backbone 鈫?P4 DINO3 Enhancement 鈫?Multi-Scale Head 鈫?Detection
 ```
 
 #### Dual Enhancement (yolov13-dino3-dual)
 ```
-Input → CNN Backbone → P3 DINO3 + P4 DINO3 Enhancement → Multi-Scale Head → Detection
+Input 鈫?CNN Backbone 鈫?P3 DINO3 + P4 DINO3 Enhancement 鈫?Multi-Scale Head 鈫?Detection
 ```
 
 #### Focused Enhancement (yolov13-dino3-p3)
 ```
-Input → CNN Backbone → P3 DINO3 Enhancement → Multi-Scale Head → Detection
+Input 鈫?CNN Backbone 鈫?P3 DINO3 Enhancement 鈫?Multi-Scale Head 鈫?Detection
 ```
 
 #### Multi Enhancement (yolov13-dino3-multi)
 ```
-Input → CNN Backbone → P3 DINO3-S + P4 DINO3-B + P5 DINO3-L → Multi-Scale Head → Detection
+Input 鈫?CNN Backbone 鈫?P3 DINO3-S + P4 DINO3-B + P5 DINO3-L 鈫?Multi-Scale Head 鈫?Detection
 ```
 
 ### Feature Fusion Strategy
 
 Each architecture uses intelligent feature fusion:
 
-1. **Input Projection**: CNN features → RGB-like representation for DINO3
+1. **Input Projection**: CNN features 鈫?RGB-like representation for DINO3
 2. **DINO3 Processing**: Vision Transformer feature extraction
-3. **Feature Adaptation**: DINO3 features → YOLOv13 compatible dimensions
+3. **Feature Adaptation**: DINO3 features 鈫?YOLOv13 compatible dimensions
 4. **Spatial Alignment**: Resize and align features to original resolution
 5. **Feature Fusion**: Concatenate and process CNN + DINO3 features
 
@@ -190,7 +192,7 @@ Each architecture uses intelligent feature fusion:
 - **Gradient Checkpointing**: Available for large models to reduce memory
 - **Mixed Precision**: Supported for faster training with less memory
 
-## 📈 Expected Performance Gains
+## 馃搱 Expected Performance Gains
 
 ### Relative to Standard YOLOv13
 
@@ -203,7 +205,7 @@ Each architecture uses intelligent feature fusion:
 
 *Note: Performance gains vary significantly based on dataset characteristics, object size distribution, and training configuration.*
 
-## ⚡ Performance Optimization Tips
+## 鈿?Performance Optimization Tips
 
 ### For Fast Training
 - Use `yolov13-dino3` or `yolov13-dino3-p3`
@@ -223,7 +225,7 @@ Each architecture uses intelligent feature fusion:
 - Consider using higher input resolution
 - Use data augmentation for small objects
 
-## 🛠️ Troubleshooting
+## 馃洜锔?Troubleshooting
 
 ### Common Issues
 
@@ -241,7 +243,7 @@ Each architecture uses intelligent feature fusion:
 - **Solution**: Use `yolov13-dino3` or `yolov13-dino3-multi`
 - **Note**: P3-only enhancement may not help large objects
 
-## 📚 References and Technical Details
+## 馃摎 References and Technical Details
 
 - **Base Architecture**: YOLOv13 with YOLOv3-inspired darknet backbone
 - **Enhancement Method**: Vision Transformer feature integration

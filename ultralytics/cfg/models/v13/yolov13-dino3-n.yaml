@@ -1,6 +1,6 @@
-# YOLOv13n with DINOv3 backbone (Nano variant)
+﻿# YOLOv13n with DINOv3 backbone (Nano variant)
 # Usage: YOLO('yolov13-dino3-n.yaml') - Fast inference variant
-# Parameters: ~35M | GFLOPs: ~5.8
+# Parameters: ~35M | GFLOPs: requires local re-profile
 
 nc: 80 # number of classes
 scales:
@@ -65,3 +65,4 @@ head:
 
   # Detection heads - P3(64ch), P4(128ch), P5(256ch)
   - [[29, 32, 35], 1, Detect, [nc]]        # 36: Detect(P3, P4, P5)
+

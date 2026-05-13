@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
   <rect width="800" height="600" fill="#ffffff"/>
   
@@ -9,12 +9,12 @@
   
   <!-- Input -->
   <rect x="50" y="60" width="100" height="40" rx="5" fill="#e1f5fe" stroke="#01579b" stroke-width="2"/>
-  <text x="100" y="85" text-anchor="middle" font-size="12" font-weight="bold">Input 3×640×640</text>
+  <text x="100" y="85" text-anchor="middle" font-size="12" font-weight="bold">Input 3脳640脳640</text>
   
   <!-- YOLOv13 Backbone -->
   <rect x="50" y="130" width="300" height="80" rx="5" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2"/>
   <text x="200" y="150" text-anchor="middle" font-size="14" font-weight="bold">YOLOv13 Backbone</text>
-  <text x="200" y="170" text-anchor="middle" font-size="11">Conv→Bottleneck→P3(256)→P4(512)→P5(1024)</text>
+  <text x="200" y="170" text-anchor="middle" font-size="11">Conv鈫払ottleneck鈫扨3(256)鈫扨4(512)鈫扨5(1024)</text>
   <text x="200" y="190" text-anchor="middle" font-size="10">YOLOv3-Inspired Darknet Style</text>
   
   <!-- DINO Enhancement -->
@@ -28,13 +28,13 @@
   <text x="300" y="275" text-anchor="middle" font-size="14" font-weight="bold">Multi-Scale Detection Head</text>
   
   <rect x="80" y="290" width="100" height="40" fill="#c8e6c8" stroke="#4caf50"/>
-  <text x="130" y="315" text-anchor="middle" font-size="11">P3 Small 80×80</text>
+  <text x="130" y="315" text-anchor="middle" font-size="11">P3 Small 80脳80</text>
   
   <rect x="200" y="290" width="120" height="40" fill="#ffecb3" stroke="#ffa000" stroke-width="2"/>
-  <text x="260" y="315" text-anchor="middle" font-size="11">P4 Medium 40×40 ⭐</text>
+  <text x="260" y="315" text-anchor="middle" font-size="11">P4 Medium 40脳40 猸?/text>
   
   <rect x="340" y="290" width="100" height="40" fill="#c8e6c8" stroke="#4caf50"/>
-  <text x="390" y="315" text-anchor="middle" font-size="11">P5 Large 20×20</text>
+  <text x="390" y="315" text-anchor="middle" font-size="11">P5 Large 20脳20</text>
   
   <rect x="460" y="290" width="70" height="40" fill="#e1f5fe" stroke="#0277bd"/>
   <text x="495" y="315" text-anchor="middle" font-size="11">FPN+PAN</text>
@@ -47,12 +47,12 @@
   <rect x="600" y="130" width="150" height="150" rx="5" fill="#f5f5f5" stroke="#424242" stroke-width="2"/>
   <text x="675" y="150" text-anchor="middle" font-size="12" font-weight="bold">Model Stats</text>
   <text x="620" y="170" font-size="10">DINO3: 99.4M params</text>
-  <text x="620" y="185" font-size="10">FLOPs: 18.1G</text>
+  <text x="620" y="185" font-size="10">GFLOPs: profile locally</text>
   <text x="620" y="200" font-size="10">DINO2: 95.8M params</text>
   <text x="620" y="220" font-size="10">Features:</text>
-  <text x="620" y="235" font-size="9">• Global Context</text>
-  <text x="620" y="250" font-size="9">• Transfer Learning</text>
-  <text x="620" y="265" font-size="9">• Small Dataset Ready</text>
+  <text x="620" y="235" font-size="9">鈥?Global Context</text>
+  <text x="620" y="250" font-size="9">鈥?Transfer Learning</text>
+  <text x="620" y="265" font-size="9">鈥?Small Dataset Ready</text>
   
   <!-- Arrows -->
   <defs>
@@ -80,5 +80,6 @@
   <rect x="420" y="505" width="12" height="12" fill="#e1f5fe" stroke="#0277bd"/>
   <text x="440" y="515" font-size="11">Feature Fusion</text>
   
-  <text x="70" y="535" font-size="11" font-weight="bold">Benefits: Global Context Understanding • Superior Small Object Detection • Transfer Learning • Small Dataset Excellence</text>
+  <text x="70" y="535" font-size="11" font-weight="bold">Benefits: Global Context Understanding 鈥?Superior Small Object Detection 鈥?Transfer Learning 鈥?Small Dataset Excellence</text>
 </svg>
+

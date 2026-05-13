@@ -1,6 +1,6 @@
-# YOLOv13x with DINOv3 backbone (Extra Large variant)
+﻿# YOLOv13x with DINOv3 backbone (Extra Large variant)
 # Usage: YOLO('yolov13-dino3-x.yaml') - Maximum accuracy variant
-# Parameters: ~198M | GFLOPs: ~48.2
+# Parameters: ~198M | GFLOPs: requires local re-profile
 
 nc: 80 # number of classes
 scales:
@@ -65,3 +65,4 @@ head:
 
   # Detection heads - P3(384ch), P4(768ch), P5(1536ch)
   - [[29, 32, 35], 1, Detect, [nc]]        # 36: Detect(P3, P4, P5)
+

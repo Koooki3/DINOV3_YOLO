@@ -1,6 +1,6 @@
-# YOLOv13 with DINOv3 ConvNeXt Backbone
+﻿# YOLOv13 with DINOv3 ConvNeXt Backbone
 # Usage: YOLO('yolov13-dino3-convnext-base.yaml') - ConvNeXt architecture for enhanced CNN features
-# Parameters: ~99M | GFLOPs: ~18.1 | Uses DINOv3 ConvNeXt for hybrid CNN-ViT features
+# Parameters: ~99M | GFLOPs: requires local re-profile | Uses DINOv3 ConvNeXt for hybrid CNN-ViT features
 
 nc: 80 # number of classes
 scales:

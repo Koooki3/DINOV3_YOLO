@@ -1,6 +1,6 @@
-# YOLOv13x with DINOv3 Dual-Scale Enhancement (Extra Large variant)
+﻿# YOLOv13x with DINOv3 Dual-Scale Enhancement (Extra Large variant)
 # Usage: YOLO('yolov13-dino3-dual-x.yaml') - P3+P4 enhanced, xlarge size
-# Parameters: ~318M | GFLOPs: ~73.8
+# Parameters: ~318M | GFLOPs: requires local re-profile
 
 nc: 80 # number of classes
 scales:
@@ -69,3 +69,4 @@ head:
 
   # Detection heads - P3(384ch), P4(768ch), P5(1536ch)
   - [[30, 33, 36], 1, Detect, [nc]]        # 37: Detect(P3, P4, P5)
+

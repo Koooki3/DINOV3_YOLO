@@ -1,4 +1,4 @@
-# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+﻿# Ultralytics 馃殌 AGPL-3.0 License - https://ultralytics.com/license
 
 # Ultralytics YOLO11-cls image classification model
 # Model docs: https://docs.ultralytics.com/models/yolo11
@@ -8,11 +8,11 @@
 nc: 80 # number of classes
 scales: # model compound scaling constants, i.e. 'model=yolo11n-cls.yaml' will call yolo11-cls.yaml with scale 'n'
   # [depth, width, max_channels]
-  n: [0.50, 0.25, 1024] # summary: 151 layers, 1633584 parameters, 1633584 gradients, 3.3 GFLOPs
-  s: [0.50, 0.50, 1024] # summary: 151 layers, 5545488 parameters, 5545488 gradients, 12.2 GFLOPs
-  m: [0.50, 1.00, 512] # summary: 187 layers, 10455696 parameters, 10455696 gradients, 39.7 GFLOPs
-  l: [1.00, 1.00, 512] # summary: 309 layers, 12937104 parameters, 12937104 gradients, 49.9 GFLOPs
-  x: [1.00, 1.50, 512] # summary: 309 layers, 28458544 parameters, 28458544 gradients, 111.1 GFLOPs
+  n: [0.50, 0.25, 1024] # summary: 151 layers, 1633584 parameters, 1633584 gradients, GFLOPs require local re-profile
+  s: [0.50, 0.50, 1024] # summary: 151 layers, 5545488 parameters, 5545488 gradients, GFLOPs require local re-profile
+  m: [0.50, 1.00, 512] # summary: 187 layers, 10455696 parameters, 10455696 gradients, GFLOPs require local re-profile
+  l: [1.00, 1.00, 512] # summary: 309 layers, 12937104 parameters, 12937104 gradients, GFLOPs require local re-profile
+  x: [1.00, 1.50, 512] # summary: 309 layers, 28458544 parameters, 28458544 gradients, GFLOPs require local re-profile
 
 # YOLO11n backbone
 backbone:
@@ -31,3 +31,4 @@ backbone:
 # YOLO11n head
 head:
   - [-1, 1, Classify, [nc]] # Classify
+
